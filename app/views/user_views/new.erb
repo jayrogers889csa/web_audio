@@ -1,0 +1,29 @@
+<div class="home">
+  <a href="/">&larr; Home</a>
+</div>
+
+<div class="container">
+<h2>Please enter the following information below to create your account:</h2>
+  <form id="new_user" action="/user/sign_up" method="POST">
+
+      <span>First Name:</span>
+      <input type="text" placeholder="First Name" name="user[first_name]">
+      <br>
+      <span>Last Name:</span>
+      <input type="text" placeholder="Last Name" name="user[last_name]">
+      <br>
+      <span>Email:</span>
+      <input type="text" placeholder="Email" name="user[email]">
+      <br>
+      <span>Birthdate:</span>
+      <input type="text" placeholder="yyyy-mm-yy" name="user[birthdate]">
+      <br>
+      <span>Password:</span>
+      <input type="password" placeholder="Password" name="user[password]">
+      <br>
+      <span>Password Confirmation:</span>
+      <input type="password" placeholder="Password Confirmation" name="user[password_confirmation]">
+      <br>
+      <input type="submit" value="Sign Up">
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="home">
+  <a href="/">&larr; Home</a>
+</div>
+
+<div class="container">
+  <h1>Please view your events below!</h1>
+
+  <% if current_user.created_events.count == 0 %>
+    <h4>It looks like you haven't created any events yet...</h4>
+  <% end %>
+
+  <a id="create_new_event" href ="/event/new">Create a New Event!</a>
+  <br>
+  <br>
+  <div id="insert_creation_form"></div>
+
+  <div id="my_events">
+    <% current_user.created_events.each do |event| %>
+      <h2>Name: <%= event.name %></h2>
+      <h3>Location: <%= event.location %></h3>
+      <h4>Start Time: <%= event.starts_at %></h4>
+      <h4>End Time: <%= event.ends_at %></h4>
+      <h5><a href="/event/<%= event.id %>/edit">Edit event</a></h5>
+      <h5><a href="/event/<%= event.id %>/delete">Delete event</a></h5>
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="home">
+  <a href="/">&larr; Home</a>
+</div>
+
+<div class="container">
+  <form id="update_user" action="/user/<%= current_user.id %>/update" method="POST">
+      <span>Email:</span>
+      <input type="text" value="<%= current_user.email %>" name="user[email]">
+      <br>
+      <span>Password:</span>
+      <input type="password" placeholder="Password" name="user[password]">
+      <br>
+      <span>Password Confirmation:</span>
+      <input type="password" placeholder="Password Confirmation" name="user[password_confirmation]">
+      <br>
+      <br>
+      <input type="submit" value="Save Changes">
+  </form>
+  <br>
+  <button><a id="delete_account" href="/user/<%= current_user.id %>/delete">Delete Account</a></button>
+  <div id="confirm_delete_message"></div>
+</div>

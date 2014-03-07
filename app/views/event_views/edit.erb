@@ -1,0 +1,24 @@
+<div class="home">
+  <a href="/homepage/<%= current_user.id %>">&larr; Back</a>
+</div>
+
+<div class="container">
+<h2>Please enter the following information below to edit your event:</h2>
+  <form id="update_event" action="/event/<%= @event.id %>/update" method="POST">
+      <span>Event Name:</span>
+      <input type="hidden" value="<%=@event.id %>" name="event[id]">
+      <input type="text" value="<%= @event.name %>" name="event[name]">
+      <br>
+      <span>Location:</span>
+      <input type="text" value="<%= @event.location %>" name="event[location]">
+      <br>
+      <span>Starts At (edit me!):</span>
+      <input type="text" value="<%= @event.starts_at %>" name="event[starts_at]">
+      <br>
+      <span>Ends At (edit me!):</span>
+      <input type="text" value="<%= @event.ends_at %>" name="event[ends_at]">
+      <br>
+      <input type="submit" value="Save Event">
+  </form>
+</div>
+

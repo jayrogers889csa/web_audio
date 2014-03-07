@@ -1,0 +1,8 @@
+
+<div class="container">
+  <p>Are you sure?</p>
+
+  <form id="confirm_event_delete" method="post" action="/event/<%= @event.id %>/delete"><input type="submit" name="submit" value="Yes, I'm sure"></form>
+  <br>
+  <a id="second_thoughts_event" href="/homepage/<%= current_user.id %>">Wait, I'm having second thoughts.</a>
+</div>

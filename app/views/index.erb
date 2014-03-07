@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Welcome to Sound App!</h1>
+  <h2>Select an MP3 file below to upload...</h2>
+  <form id="uploadfile" method="post" action="/new_file">
+      <input id="name" type="text" placeholder="Your File Name here" name="file[name]">
+      <br>
+      <br>
+      <input id="fileupload" type="file" name="file[mp3]">
+      <input type="submit" value="Upload" id="submit">
+  </form>
+</div>

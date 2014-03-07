@@ -1,0 +1,6 @@
+<h2>Name: <%= @event.name %></h2>
+<h3>Location: <%= @event.location %></h3>
+<h4>Start Time: <%= @event.starts_at %></h4>
+<h4>End Time: <%= @event.ends_at %></h4>
+<h5><a href="/event/<%= @event.id %>/edit">Edit event</a></h5>
+<h5><a href="/event/<%= @event.id %>/delete">Delete event</a></h5>

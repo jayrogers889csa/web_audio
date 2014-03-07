@@ -1,0 +1,20 @@
+<div id="new_event_creation_form">
+  <form id="new_event" action="/event/new" method="POST">
+    <span>Event Name:</span>
+    <input type="hidden" value="<%=current_user.id%>" name="event[creator_id]">
+    <input type="text" placeholder="Name" name="event[name]">
+    <br>
+    <span>Location:</span>
+    <input type="text" placeholder="Location" name="event[location]">
+    <br>
+    <span>Starts At (edit me!):</span>
+    <input type="text" value="<%= Time.now %>" name="event[starts_at]">
+    <br>
+    <span>Ends At (edit me!):</span>
+    <input type="text" value="<%= Time.now + (1 + rand(6)).hours %>" name="event[ends_at]">
+    <br>
+    <input type="submit" value="Create Event">
+  </form>
+  <br>
+  <a id="second_thoughts_new_event" href="/homepage/<%= current_user.id %>">Wait, I'm having second thoughts on creating this event.</a>
+</div>
