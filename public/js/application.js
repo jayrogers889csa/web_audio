@@ -3,29 +3,53 @@ $(document).ready(function() {
 
     frequency_array = new Array();
 
+    oscillator = context.createOscillator();
+
+    var keycode_one = 65; //a
+    var keycode_two = 83; //s
+    var keycode_three = 68; //d
+    var keycode_four = 70; //f
+
     average = 0;
 
-    var playNote = function(oscillator_id, frequency_id, wave_type_id) {
+    $(document).on("keydown", function(event) {
+        if (event.keyCode == keycode_one) {
+            playNote("oscillator_one", "pitch_slider_one", "wave_one", keycode_one);
+        } else if (event.keyCode == keycode_two) {
+            playNote("oscillator_two", "pitch_slider_two", "wave_two", keycode_two);
+        } else if (event.keyCode == keycode_three) {
+            playNote("oscillator_three", "pitch_slider_three", "wave_three", keycode_three);
+        } else if (event.keyCode == keycode_four) {
+            playNote("oscillator_four", "pitch_slider_four", "wave_four", keycode_four);
+        }
+    });
 
-        var osc = document.getElementById(oscillator_id);
+    $(document).on("keyup", function(event) {
+        if (event.keyCode == keycode_one) {
+            stopNote("oscillator_one");
+        } else if (event.keyCode == keycode_two) {
+            stopNote("oscillator_two");
+        } else if (event.keyCode == keycode_three) {
+            stopNote("oscillator_three");
+        } else if (event.keyCode == keycode_four) {
+            stopNote("oscillator_four");
+        }
 
-        osc.onmouseover = function() {
-            var oscPitch = document.getElementById(frequency_id).value;
+    });
 
-            oscillator = context.createOscillator(),
-            oscillator.type = parseInt(document.getElementById(wave_type_id).value);
-            oscillator.frequency.value = oscPitch;
-            frequency_array.push(parseInt(oscPitch));
-            oscillator.connect(context.destination);
+    var playNote = function(oscillator_id, frequency_id, wave_type_id, keycode_id) {
 
-            oscillator.noteOn(0);
-        };
+        var osc = document.getElementById(oscillator_id)
+        console.log(osc);
+        var oscPitch = document.getElementById(frequency_id).value;
+        $(osc).addClass('cool-border');
+        oscillator.type = parseInt(document.getElementById(wave_type_id).value);
+        oscillator.frequency.value = oscPitch;
+        console.log(oscPitch);
+        frequency_array.push(parseInt(oscPitch));
+        oscillator.connect(context.destination);
 
-        osc.onmouseleave = function() {
-            oscillator.disconnect();
-            average = Math.floor(calculateAverage(frequency_array));
-            $('#average_frequency').html(average + " Hz");
-        };
+        oscillator.noteOn(0);
     }
 
     var calculateAverage = function(array) {
@@ -36,8 +60,15 @@ $(document).ready(function() {
         return sum / array.length;
     }
 
-    playNote("oscillator_one", "pitch_slider_one", "wave_one");
-    playNote("oscillator_two", "pitch_slider_two", "wave_two");
-    playNote("oscillator_three", "pitch_slider_three", "wave_three");
-    playNote("oscillator_four", "pitch_slider_four", "wave_four");
+    var stopNote = function(oscillator_id) {
+        var osc = document.getElementById(oscillator_id)
+        $(osc).removeClass('cool-border');
+        oscillator.disconnect();
+        average = Math.floor(calculateAverage(frequency_array));
+        $('#average_frequency').html(average + "Hz ");
+    }
+
+    var findOsc = function(oscillator_id) {
+        var osc = document.getElementById(oscillator_id)
+    }
 });

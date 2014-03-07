@@ -10,48 +10,96 @@
 
 #one {
   position: absolute;
-  top: 0;
+  top: 200px;
   left: 0;
 }
 
 #oscillator_one {
-  background-color: red;
+  background-color: rgb(188, 86, 78);
   width: 200px;
   height: 200px;
 }
 
 #two {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 200px;
+  left: 225px;
 }
 
 #oscillator_two {
-  background-color: green;
+  background-color: rgb(127, 181, 94);
   width: 200px;
   height: 200px;
 }
 
 #three {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 200px;
+  left: 450px;
 }
 
 #oscillator_three {
-  background-color: blue;
+  background-color: rgb(96, 139, 201);
   width: 200px;
   height: 200px;
 }
 
 #four {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 200px;
+  left: 675px;
 }
 
 #oscillator_four {
-  background-color: orange;
+  background-color: rgb(222, 171, 77);
+  width: 200px;
+  height: 200px;
+}
+
+#five {
+  position: absolute;
+  top: 200px;
+  left: 900px;
+}
+
+#oscillator_five {
+  background-color: rgb(131, 191, 222);
+  width: 200px;
+  height: 200px;
+}
+
+#six {
+  position: absolute;
+  top: 200px;
+  left: 1125px;
+}
+
+#oscillator_six {
+  background-color: rgb(152, 152, 152);
+  width: 200px;
+  height: 200px;
+}
+
+#seven {
+  position: absolute;
+  top: 200px;
+  left: 1350px;
+}
+
+#oscillator_seven {
+  background-color: rgb(75, 65, 114);
+  width: 200px;
+  height: 200px;
+}
+
+#eight {
+  position: absolute;
+  top: 200px;
+  left: 1575px;
+}
+
+#oscillator_eight {
+  background-color: rgb(39, 39, 39);
   width: 200px;
   height: 200px;
 }
@@ -59,3 +107,7 @@
 .center {
   text-align: center;
   }
+
+.cool-border {
+  box-shadow: 2px 2px 4px rgba(129, 174, 233, 174);
+}
